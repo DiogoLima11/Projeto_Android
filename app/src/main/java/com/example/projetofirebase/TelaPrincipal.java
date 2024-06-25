@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class TelaPrincipal extends AppCompatActivity {
 
     private TextView nomeUsuario, emailUsario;
-    private Button bt_deslogar;
+    private Button bt_deslogar, bt_produtos;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
 
@@ -37,13 +37,21 @@ public class TelaPrincipal extends AppCompatActivity {
         bt_deslogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(TelaPrincipal.this, FomrLogin.class);
                 startActivity(intent);
                 finish();
             }
         });
+
+        bt_produtos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPrincipal.this, produtos.class);
+                startActivity(intent);
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -62,19 +70,18 @@ public class TelaPrincipal extends AppCompatActivity {
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-
-                    if (documentSnapshot != null){
-                        nomeUsuario.setText(documentSnapshot.getString("nome"));
-                        emailUsario.setText(email);
-                    }
+                if (documentSnapshot != null) {
+                    nomeUsuario.setText(documentSnapshot.getString("nome"));
+                    emailUsario.setText(email);
+                }
             }
         });
-
     }
 
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         nomeUsuario = findViewById(R.id.textNomeUsuario);
         emailUsario = findViewById(R.id.textEmailUsuario);
         bt_deslogar = findViewById(R.id.bt_deslogar);
+        bt_produtos = findViewById(R.id.bt_produtos);
     }
 }

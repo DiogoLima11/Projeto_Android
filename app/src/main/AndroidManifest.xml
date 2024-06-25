@@ -13,6 +13,11 @@
         android:theme="@style/Theme.ProjetoFirebase"
         tools:targetApi="31">
         <activity
+            android:name=".produtos"
+            android:exported="false"
+            android:label="@string/title_activity_produtos"
+            android:theme="@style/Theme.ProjetoFirebase" />
+        <activity
             android:name=".TelaPrincipal"
             android:exported="false" />
         <activity
