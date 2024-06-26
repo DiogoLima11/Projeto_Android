@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/backgroud"
     tools:context=".produtos">
 
     <ScrollView
@@ -77,9 +77,10 @@
                     android:layout_height="wrap_content"
                     android:text="100.00"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
                     app:layout_constraintStart_toEndOf="@id/containerImg1"
                     app:layout_constraintTop_toBottomOf="@id/txtFoodNameDescription1"/>
 
@@ -164,11 +165,12 @@
                     android:id="@+id/txtPrice2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200.00"
+                    android:text="80.00"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
                     app:layout_constraintStart_toEndOf="@id/containerImg2"
                     app:layout_constraintTop_toBottomOf="@id/txtFoodNameDescription2"/>
 
@@ -253,11 +255,12 @@
                     android:id="@+id/txtPrice3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="330.00"
+                    android:text="100.00"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginLeft="20dp"
                     app:layout_constraintStart_toEndOf="@id/containerImg3"
                     app:layout_constraintTop_toBottomOf="@id/txtFoodNameDescription3"/>
 
